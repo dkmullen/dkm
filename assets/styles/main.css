@@ -1,0 +1,35 @@
+ @font-face {
+	font-family: Varta;
+	src: url(../fonts/varta/Varta-VariableFont_wght.ttf);
+ }
+ 
+ * {
+	font-family: Varta;
+	font-weight: 300;
+ }
+
+body {
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	font-family: Varta;
+
+}
+li {
+	list-style: none;
+	line-height: 1.15;
+}
+.headline {
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	color: lightseagreen;
+}
+.link-section {
+	margin-bottom: 1rem;
+}
