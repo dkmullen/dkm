@@ -9,7 +9,6 @@
  }
 
 body {
-	max-width: 500px;
 	margin: 0 auto;
 	text-align: center;
 	font-family: Varta;
@@ -33,3 +32,49 @@ a:hover {
 .link-section {
 	margin-bottom: 1rem;
 }
+.navbar-wrapper {
+	width:100%;
+	background-color: black;
+}
+.navbar {
+	max-width: 900px;
+	margin: auto;
+	display: flex;
+	color: white;
+	height: 50px;
+	align-items: center;
+}
+.logo {
+	width: 30%;
+	text-align: left;
+	font-size: 1.4rem;
+	margin-left: 1rem;
+}
+.menu {
+	display: flex;
+	width: 70%;
+	justify-content: flex-end;
+}
+.menu-item {
+	margin-right: 1rem;
+	font-size: 1rem;
+	font-weight: 700;
+}
+.menu-icon {
+	margin-right: 1rem;
+	display: none;
+}
+.content-wrapper {
+	max-width: 900px;
+	margin: auto;
+}
+
+@media (max-width: 499px) {
+	.menu-item {
+		display: none;
+	}
+	.menu-icon {
+		display: block;
+	}
+}
+
