@@ -7,20 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="stylesheet" href="./assets/styles/main.css">
 </head>
-<body>
-    <div class="navbar-wrapper">
-        <div class="navbar">
-            <div class="logo">dkmullen.com</div>
-            <div class="menu" id="menu">
-                <div class="menu-item">About</div>
-                <div class="menu-item">Writing</div>
-                <div class="menu-item">Favorite Things</div>
-            </div>
-            <div class="menu-icon-wrapper">
-                <img class = "menu-icon" src="assets/images/menu-white-36dp.svg" onclick="toggleMenu()"> 
-            </div>
-        </div>
-    </div>
+<body onload="loadNav()">
+    <div class="navbar-wrapper" id="navbar-wrapper"></div>
 
     <div class="content-wrapper">
         <ul>
