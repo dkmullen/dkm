@@ -65,6 +65,9 @@ a:hover {
 	color: lightgray;
 	cursor: pointer;
 }
+.navbar a {
+	color: white;
+}
 .menu-icon {
 	margin-right: 1rem;
 	display: none;
