@@ -52,11 +52,12 @@ a:hover {
 }
 .menu {
 	display: flex;
+	flex-direction: row;
 	width: 70%;
 	justify-content: flex-end;
 }
 .menu-item {
-	margin-right: 1rem;
+	margin: 0 1rem 0 0 ;
 	font-size: 1rem;
 	font-weight: 700;
 }
@@ -70,11 +71,35 @@ a:hover {
 }
 
 @media (max-width: 499px) {
-	.menu-item {
-		display: none;
+	.menu-icon-wrapper {
+		width: 70%;
+		display: flex;
+		justify-content: flex-end;
 	}
 	.menu-icon {
 		display: block;
+		cursor: pointer;
+	}
+	.menu {
+		display: none;
+		flex-direction: column;
+		text-align: left;
+		background-color: rgba(32, 178, 170, 0.9);
+		width: 60%;
+		position: absolute;
+		right: 0;
+		top: 50px;
+	}
+	.menu.show {
+		display: flex;
+	}
+	.menu-item {
+		margin: 0;
+		padding: 1rem;
+	}
+	.menu-item:hover {
+		background-color: rgb(32, 178, 170);
+		cursor: pointer;
 	}
 }
 
