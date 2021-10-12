@@ -38,4 +38,15 @@ loadNav = () => {
             document.getElementById('favoritesLink').classList.add('active');
             break;
     }
+    loadQuotes();
+}
+
+async function loadQuotes () {
+    const res = await axios.get('url')
+    .catch((err) => {
+        console.log(err);
+    });
+    if (res) {
+        console.log(res.data);
+    }
 }
