@@ -47,6 +47,31 @@ async function loadQuotes () {
         console.log(err);
     });
     if (res) {
-        console.log(res.data);
+        let target = document.getElementById('quote-wrapper-temp');
+        for (let i in res.data) {
+            target.innerHTML += `<div class="quote"><em>${res.data[i].quote}</em><div class="quote-source">${res.data[i].source}</div></div>`;
+        }
     }
 }
+
+async function mySubmit () {
+    let quote = document.getElementById('quote').value;
+    let source = document.getElementById('source').value;
+    const res = await axios({
+        method: 'post',
+        url: 'url',
+        data: {
+          quote: quote,
+          source: source
+        }
+      })
+      .catch((err) => {
+          console.log(err);
+      });
+      if (res) {
+          document.getElementById('result').innerHTML = res.data;
+      }
+
+
+} 
+
