@@ -41,9 +41,11 @@ loadNav = () => {
 };
 
 async function loadQuotes() {
-	const res = await axios.get('').catch((err) => {
-		console.log(err);
-	});
+	const res = await axios
+		.get('https://w4hyvgmxbj.execute-api.us-east-2.amazonaws.com/dev')
+		.catch((err) => {
+			console.log(err);
+		});
 	if (res) {
 		let target = document.getElementById('quote-wrapper-temp');
 		for (let i in res.data) {

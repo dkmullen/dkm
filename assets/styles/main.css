@@ -1,10 +1,12 @@
 @font-face {
-	font-family: Varta;
-	src: url(../fonts/varta/Varta-VariableFont_wght.ttf);
+	/* font-family: Varta;
+	src: url(../fonts/varta/Varta-VariableFont_wght.ttf); */
+	font-family: 'Roboto Mono';
+	src: url(../fonts/roboto-mono/static/RobotoMono-Light.ttf);
 }
 
 * {
-	font-family: Varta;
+	font-family: 'Roboto Mono';
 	font-weight: 300;
 }
 
@@ -12,6 +14,7 @@ body {
 	margin: 0 auto;
 	text-align: center;
 	font-size: 1.1rem;
+	line-height: 1.7;
 }
 li {
 	list-style: none;
@@ -23,10 +26,11 @@ li {
 }
 a {
 	text-decoration: none;
-	color: black;
+	color: #004db3;
+	font-weight: bold;
 }
 a:hover {
-	color: #70aeff;
+	color: #5283c3;
 }
 .link-section {
 	margin-bottom: 1rem;
@@ -86,6 +90,7 @@ a:hover {
 .content-wrapper {
 	max-width: 1100px;
 	margin: 2rem auto;
+	padding: 0 2rem;
 }
 .row {
 	display: flex;
@@ -100,7 +105,6 @@ a:hover {
 	margin: 0 1rem;
 	padding: 0 4px;
 }
-
 .quote {
 	/* margin-top: 8px; */
 	vertical-align: middle;
@@ -124,6 +128,10 @@ strong {
 #quote-wrapper-temp .quote {
 	max-width: 40%;
 	min-width: 20%;
+}
+
+.left {
+	text-align: left;
 }
 
 @media (max-width: 649px) {
