@@ -10,10 +10,10 @@ toggleMenu = () => {
 const navTemplate = `<div class="navbar">
         <div class="logo"><a href="./index.html">dkmullen.com</a></div>
         <div class="menu" id="menu">
-            <a href="./index.html"><div class="menu-item" id="homeLink">Home</div></a>
             <a href="./about.html"><div class="menu-item" id="aboutLink">About</div></a>
             <a href="./writing.html"><div class="menu-item" id="writingLink">Writing</div></a>
             <a href="./favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
+            <a href="./contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
         </div>
         <div class="menu-icon-wrapper">
             <img class = "menu-icon" src="assets/images/menu-white-36dp.svg" onclick="toggleMenu()"> 
@@ -25,7 +25,8 @@ loadNav = () => {
 	let pathArray = window.location.pathname.split('/');
 	switch (pathArray[pathArray.length - 1]) {
 		case 'index.html':
-			document.getElementById('homeLink').classList.add('active');
+		// 	// document.getElementById('homeLink').classList.add('active');
+			loadQuotes();
 			break;
 		case 'about.html':
 			document.getElementById('aboutLink').classList.add('active');
@@ -36,8 +37,10 @@ loadNav = () => {
 		case 'favorite-things.html':
 			document.getElementById('favoritesLink').classList.add('active');
 			break;
+		case 'contact.html':
+			document.getElementById('contactLink').classList.add('active');
+			break;
 	}
-	loadQuotes();
 };
 
 async function loadQuotes() {
@@ -54,20 +57,21 @@ async function loadQuotes() {
 	}
 }
 
-async function submitQuote() {
-	let quote = document.getElementById('quote').value;
-	let source = document.getElementById('source').value;
-	const res = await axios({
-		method: 'post',
-		url: 'url',
-		data: {
-			quote: quote,
-			source: source,
-		},
-	}).catch((err) => {
-		console.log(err);
-	});
-	if (res) {
-		document.getElementById('result').innerHTML = res.data;
-	}
+async function submitMessage() {
+	let name = document.getElementById('name').value;
+	let email = document.getElementById('email').value;
+	let message = document.getElementById('message').value;
+	console.log(name, email, message);
+	// const res = await axios({
+	// 	method: 'post',
+	// 	url: 'url',
+	// 	data: {
+	// 		name, email, message
+	// 	},
+	// }).catch((err) => {
+	// 	console.log(err);
+	// });
+	// if (res) {
+	// 	document.getElementById('result').innerHTML = res.data;
+	// }
 }

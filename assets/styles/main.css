@@ -135,6 +135,29 @@ strong {
 	text-align: left;
 }
 
+input {
+	height: 40px;
+	width: 400px;
+}
+
+.input {
+	border-radius: 5px;
+	border: none;
+	background: #efefef;
+	margin-bottom: 1rem;
+	padding: 0 10px;
+}
+
+.button.primary {
+	height: 40px;
+	padding: 0 20px;
+	border: none;
+	color: white;
+	background: #1e3859;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
 @media (max-width: 499px) {
 	.logo {
 		font-size: 2rem;
