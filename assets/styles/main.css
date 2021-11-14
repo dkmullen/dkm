@@ -153,9 +153,20 @@ input {
 	padding: 0 20px;
 	border: none;
 	color: white;
-	background: #1e3859;
+	background-color: #1e3859;
 	border-radius: 5px;
 	font-size: 1rem;
+}
+
+button:hover {
+	cursor: pointer;
+}
+.pressed {
+	background-color: #5d7697 !important;
+}
+
+input:invalid {
+	border: 2px dashed red;
 }
 
 @media (max-width: 499px) {

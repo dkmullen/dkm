@@ -25,7 +25,7 @@ loadNav = () => {
 	let pathArray = window.location.pathname.split('/');
 	switch (pathArray[pathArray.length - 1]) {
 		case 'index.html':
-		// 	// document.getElementById('homeLink').classList.add('active');
+			// 	// document.getElementById('homeLink').classList.add('active');
 			loadQuotes();
 			break;
 		case 'about.html':
@@ -57,6 +57,13 @@ async function loadQuotes() {
 	}
 }
 
+function pressButton() {
+	document.getElementById('submit-button').classList.add('pressed');
+}
+function releaseButton() {
+	document.getElementById('submit-button').classList.remove('pressed');
+}
+
 async function submitMessage() {
 	let name = document.getElementById('name').value;
 	let email = document.getElementById('email').value;
@@ -66,12 +73,17 @@ async function submitMessage() {
 	// 	method: 'post',
 	// 	url: 'url',
 	// 	data: {
-	// 		name, email, message
+	// 		name,
+	// 		email,
+	// 		message,
 	// 	},
 	// }).catch((err) => {
 	// 	console.log(err);
 	// });
 	// if (res) {
-	// 	document.getElementById('result').innerHTML = res.data;
+	// 	console.log(res);
+	// 	if (res.status === 200) {
+	// 		document.getElementById('contact-form').reset();
+	// 	}
 	// }
 }
