@@ -165,9 +165,25 @@ button:hover {
 	background-color: #5d7697 !important;
 }
 
-input:invalid {
-	border: 2px dashed red;
+button.disabled {
+	opacity: .38;
 }
+
+#email-error-message {
+	color: red;
+	font-size: small;
+	margin-top: -10px;
+}
+.show {
+	visibility: visible;
+}
+.hide {
+	visibility: hidden;
+}
+
+/* input:invalid {
+	border: 2px dashed red;
+} */
 
 @media (max-width: 499px) {
 	.logo {

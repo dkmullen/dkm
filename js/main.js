@@ -7,12 +7,13 @@ toggleMenu = () => {
 	}
 };
 
+/* <a href="./about.html"><div class="menu-item" id="aboutLink">About</div></a>
+<a href="./writing.html"><div class="menu-item" id="writingLink">Writing</div></a>
+<a href="./favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a> */
 const navTemplate = `<div class="navbar">
         <div class="logo"><a href="./index.html">dkmullen.com</a></div>
         <div class="menu" id="menu">
-            <a href="./about.html"><div class="menu-item" id="aboutLink">About</div></a>
-            <a href="./writing.html"><div class="menu-item" id="writingLink">Writing</div></a>
-            <a href="./favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
+
             <a href="./contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
         </div>
         <div class="menu-icon-wrapper">
@@ -69,21 +70,58 @@ async function submitMessage() {
 	let email = document.getElementById('email').value;
 	let message = document.getElementById('message').value;
 	console.log(name, email, message);
-	// const res = await axios({
-	// 	method: 'post',
-	// 	url: 'url',
-	// 	data: {
-	// 		name,
-	// 		email,
-	// 		message,
-	// 	},
-	// }).catch((err) => {
-	// 	console.log(err);
-	// });
-	// if (res) {
-	// 	console.log(res);
-	// 	if (res.status === 200) {
-	// 		document.getElementById('contact-form').reset();
-	// 	}
-	// }
+	const res = await axios({
+		method: 'post',
+		url: 'url',
+		data: {
+			name,
+			email,
+			message,
+		},
+	}).catch((err) => {
+		console.log(err);
+	});
+	if (res) {
+		console.log(res);
+		if (res.status === 200) {
+			let msg = document.getElementById('message-received').classList;
+			document.getElementById('contact-form').reset();
+			msg.remove('hide');
+			msg.add('show');
+			setTimeout(() => {
+				msg.remove('show');
+				msg.add('hide');
+			}, 7000);
+		}
+	}
 }
+document.getElementById('name').addEventListener('input', doValidate);
+document.getElementById('email').addEventListener('input', doValidate);
+document.getElementById('message').addEventListener('input', doValidate);
+
+function doValidate() {
+	let submitButton = document.getElementById('submit-button');
+	let name = document.getElementById('name').value;
+	let email = document.getElementById('email').value;
+	let message = document.getElementById('message').value;
+	const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+	
+	if (emailPattern.test(email) && name && message) {
+		submitButton.disabled = false;
+		submitButton.classList.remove('disabled');
+	} else {
+		submitButton.disabled = true;
+		submitButton.classList.add('disabled');
+	}
+	errMsg = document.getElementById('email-error-message').classList;
+	if (email && !emailPattern.test(email)) {
+		errMsg.add('show');
+		errMsg.remove('hide');
+
+	} else {
+		errMsg.remove('show');
+		errMsg.add('hide');
+	}
+}
+
+ 
