@@ -3,6 +3,10 @@
 	margin-bottom: 2rem;
 	background-color: rgba(0, 0, 0, 0.089);
 	border-radius: 5px;
+	border: 1px solid rgba(0, 0, 0, 0);
+}
+.card-wrapper:hover {
+	border: 1px solid rgba(0, 0, 0, 0.2);
 }
 #music-grid {
 	display: grid;
@@ -20,6 +24,16 @@ img.video-thumbnail {
 }
 .video-description {
 	padding: 10px;
+}
+a,
+a:hover {
+	color: black;
+}
+
+@media (max-width: 767px) {
+	.video-description {
+		font-size: 14px;
+	}
 }
 
 @media (max-width: 699px) {
