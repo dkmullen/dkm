@@ -1,0 +1,16 @@
+.book-image img {
+    height: auto;
+    max-width: 200px;
+}
+.book-image, .book-description {
+    display: inline-block;
+}
+.book-description {
+    text-align: left;
+    max-width: 700px;
+    padding: 0 1rem;
+}
+.book-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
