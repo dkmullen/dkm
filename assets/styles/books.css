@@ -1,16 +1,43 @@
 .book-image img {
-    height: auto;
-    max-width: 200px;
+	height: auto;
+	max-width: 200px;
 }
-.book-image, .book-description {
-    display: inline-block;
+.book-image,
+.book-description {
+	display: inline-block;
 }
 .book-description {
-    text-align: left;
-    max-width: 700px;
-    padding: 0 1rem;
+	text-align: left;
+	max-width: 700px;
+	padding: 0 1rem;
 }
 .book-wrapper {
-    display: inline-flex;
-    align-items: center;
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid lightgray;
+}
+
+@media (max-width: 869px) {
+	.book-description {
+		font-size: 15px;
+	}
+}
+@media (max-width: 719px) {
+	.book-description {
+		grid-area: description;
+	}
+	.book-image {
+		grid-area: image;
+	}
+	.book-image img {
+		max-width: 100%;
+	}
+	.book-wrapper {
+		display: grid;
+		grid-template-areas:
+			'image'
+			'description';
+	}
 }
