@@ -13,7 +13,6 @@
 }
 .book-wrapper {
 	display: inline-flex;
-	align-items: center;
 	margin-bottom: 2rem;
 	padding-bottom: 1rem;
 	border-bottom: 1px solid lightgray;
@@ -27,6 +26,8 @@
 @media (max-width: 719px) {
 	.book-description {
 		grid-area: description;
+		font-size: 1.1rem;
+		text-align: center;
 	}
 	.book-image {
 		grid-area: image;
