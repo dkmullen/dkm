@@ -11,7 +11,7 @@
     <div class="navbar-wrapper" id="navbar-wrapper"></div>
     <h2>Contact Me</h2>
     <div class="content-wrapper">
-        <form id="contact-form">
+        <form id="contact-form" onsubmit="event.preventDefault(); submitMessage();">
             <div class="form-element">
                 <label for="name">Name:</label>
                 <div><input type="text" id="name" class="input" name="name" required></div>
@@ -26,8 +26,7 @@
                 <div><textarea cols="48" rows="10" class="input" id="message" required></textarea></div>                
             </div>
 
-            <button type="button" class="button primary disabled" id="submit-button" 
-              onclick="submitMessage()"
+            <button type="submit" class="button primary disabled" id="submit-button" 
               onmousedown="pressButton()" onmouseup="releaseButton()"
               disabled
               >Submit
