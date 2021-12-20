@@ -1,0 +1,28 @@
+.portfolio-item-wrapper {
+  padding: 1rem;
+  background-color: lightgray;
+  position: relative;
+}
+.portfolio-image {
+  transition: .5s ease;
+}
+.overlay {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay-text {
+  font-weight: bold;
+}
+.overlay-text a {
+	color: #1e3859;
+}
+.portfolio-item-wrapper:hover .portfolio-image {
+  opacity: .3;
+}
+.portfolio-item-wrapper:hover .overlay {
+  opacity: 1;
+}
