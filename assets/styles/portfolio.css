@@ -1,9 +1,6 @@
 .portfolio-item-wrapper {
-  padding: .5rem;
-  padding-bottom: 0;
-  background-color: #eceaea7a;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 .portfolio-image {
   transition: .5s ease;
@@ -24,12 +21,20 @@
   border-radius: 5px;
   color: white;
 }
-/* .overlay-text a {
-	color: #1e3859;
-} */
+.overlay-text a {
+	color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
 .portfolio-item-wrapper:hover .portfolio-image {
   opacity: .3;
 }
 .portfolio-item-wrapper:hover .overlay {
   opacity: 1;
+}
+
+@media (max-width: 599px) {
+  .overlay-text, .overlay-text a {
+    font-size: small;
+  }
 }
