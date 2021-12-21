@@ -1,10 +1,14 @@
 .portfolio-item-wrapper {
-  padding: 1rem;
-  background-color: lightgray;
+  padding: .5rem;
+  padding-bottom: 0;
+  background-color: #eceaea7a;
   position: relative;
+  margin-bottom: 1rem;
 }
 .portfolio-image {
   transition: .5s ease;
+  width: 100%;
+  height: auto;
 }
 .overlay {
   transition: .5s ease;
@@ -16,10 +20,13 @@
 }
 .overlay-text {
   font-weight: bold;
+  background-color: #1e3859;
+  border-radius: 5px;
+  color: white;
 }
-.overlay-text a {
+/* .overlay-text a {
 	color: #1e3859;
-}
+} */
 .portfolio-item-wrapper:hover .portfolio-image {
   opacity: .3;
 }
