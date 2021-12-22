@@ -11,8 +11,7 @@ const navTemplate = `<div class="navbar">
         <div class="logo"><a href="./index.html">dkmullen.com</a></div>
         <div class="menu" id="menu">
           <a href="./portfolio.html"><div class="menu-item" id="portfolioLink">Portfolio</div></a>
-          <a href="./favorite-things.html"><div class="menu-item" id="favoritesLink">Music</div></a>
-          <a href="./books.html"><div class="menu-item" id="booksLink">Books</div></a>
+          <a href="./favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
           <a href="./contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
         </div>
         <div class="menu-icon-wrapper">
@@ -38,7 +37,7 @@ loadNav = () => {
       document.getElementById('favoritesLink').classList.add('active');
       break;
     case 'books.html':
-      document.getElementById('booksLink').classList.add('active');
+      document.getElementById('favoritesLink').classList.add('active');
       break;
     case 'contact.html':
       document.getElementById('contactLink').classList.add('active');

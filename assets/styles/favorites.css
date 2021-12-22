@@ -25,8 +25,9 @@ img.video-thumbnail {
 .video-description {
 	padding: 10px;
 }
+#music-grid
 a,
-a:hover {
+#music-grid a:hover {
 	color: black;
 }
 
