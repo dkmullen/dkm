@@ -15,6 +15,17 @@
 	margin-bottom: 2rem;
 	padding-bottom: 1rem;
 	border-bottom: 1px solid lightgray;
+  max-width: 900px;
+}
+.border-thick {
+  border: 3px solid #9b1921;
+  border-radius: 5px;
+}
+.card-wrapper {
+	border-bottom: 1px solid lightgray;
+	margin-bottom: 2rem;
+
+
 }
 
 @media (max-width: 869px) {
