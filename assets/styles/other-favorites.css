@@ -1,6 +1,9 @@
 section {
-  max-width: 950px;
+  max-width: 850px;
   margin: auto;
+  margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid lightgray;
 }
 .item-image,
 .item-description {
@@ -17,9 +20,6 @@ section {
 }
 .item-wrapper {
 	display: inline-flex;
-	margin-bottom: 2rem;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid lightgray;
 }
 .border-thick {
   border: 3px solid #9b1921;
