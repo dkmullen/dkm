@@ -1,14 +1,5 @@
 ## Simple personal site
 
-### To do
-- Draw quotes from db
-- Mockup the whole layout
-- Go to a one-page scrolling layout(?)
-- Contact form
-- Build out sections
-    - Resume
-    - Favorites
-    - Quotes
-    - Writing
-    - About
-    - Portfolio
+This [website](https://dkmullen.com) is intended as a brief introduction to me and as an exercise in
+using the simpliest web development tools (HTML, CSS and Javascript) with no
+frameworks.
