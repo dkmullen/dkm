@@ -15,7 +15,7 @@ const navTemplate = `<div class="navbar">
           <a href="./contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
         </div>
         <div class="menu-icon-wrapper">
-            <img class = "menu-icon" src="assets/images/menu-white-36dp.svg" onclick="toggleMenu()"> 
+            <img class = "menu-icon" src="assets/images/menu-white-36dp.svg" width="36" height="36" alt="menu icon" onclick="toggleMenu()"> 
         </div>
     </div>`;
 
@@ -23,10 +23,6 @@ loadNav = () => {
   document.getElementById('navbar-wrapper').innerHTML = navTemplate;
   let pathArray = window.location.pathname.split('/');
   switch (pathArray[pathArray.length - 1]) {
-    case 'index.html':
-      // 	// document.getElementById('homeLink').classList.add('active');
-      // loadQuotes();
-      break;
     case 'portfolio.html':
       document.getElementById('portfolioLink').classList.add('active');
       break;
@@ -45,20 +41,6 @@ loadNav = () => {
   }
 };
 
-async function loadQuotes() {
-  const res = await axios
-    .get('https://w4hyvgmxbj.execute-api.us-east-2.amazonaws.com/dev')
-    .catch((err) => {
-      console.log(err);
-    });
-  if (res) {
-    let target = document.getElementById('quote-wrapper-temp');
-    for (let i in res.data) {
-      target.innerHTML += `<div class="quote"><em>${res.data[i].quote}</em><div class="quote-source">${res.data[i].source}</div></div>`;
-    }
-  }
-}
-
 function pressButton() {
   document.getElementById('submit-button').classList.add('pressed');
 }
@@ -70,7 +52,6 @@ async function submitMessage() {
   let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;
   let message = document.getElementById('message').value;
-  console.log(name, email, message);
   const res = await axios({
     method: 'post',
     url: 'url',
@@ -80,10 +61,9 @@ async function submitMessage() {
       message,
     },
   }).catch((err) => {
-    console.log(err);
+    console.error(err);
   });
   if (res) {
-    console.log(res);
     if (res.status === 200) {
       let msg = document.getElementById('message-received').classList;
       document.getElementById('contact-form').reset();
