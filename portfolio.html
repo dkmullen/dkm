@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dennis Mullen</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="stylesheet" href="./assets/styles/main.css">
-	<link rel="stylesheet" href="./assets/styles/portfolio.css">
-</head>
-<body onload="loadNav()">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <link rel="stylesheet" href="./assets/styles/portfolio.css" />
+  </head>
+  <body onload="loadNav()">
     <div class="navbar-wrapper" id="navbar-wrapper"></div>
     <div class="content-wrapper">
       <div class="headline">
@@ -17,38 +17,70 @@
       </div>
       <div class="portfolio-item-wrapper">
         <picture>
-          <source media="(max-width: 499px)" srcset="assets/images/portfolio/ace-mobile.jpg">
-          <source media="(min-width: 500px)" srcset="assets/images/portfolio/ace-combined.jpg">
-          <img src="assets/images/portfolio/ace-combined.jpg" class="portfolio-image" 
-          alt="Screenshots of AceKnox.com">
+          <source
+            media="(max-width: 499px)"
+            srcset="assets/images/portfolio/ace-mobile.jpg"
+          />
+          <source
+            media="(min-width: 500px)"
+            srcset="assets/images/portfolio/ace-combined.jpg"
+          />
+          <img
+            src="assets/images/portfolio/ace-combined.jpg"
+            class="portfolio-image"
+            alt="Screenshots of AceKnox.com"
+          />
         </picture>
         <div class="overlay">
           <div class="overlay-text">
             <a href="https://aceknox.com" target="_blank">AceKnox.com</a>
-            is a site I built and maintain for a non-profit that supports students in 
-            the performing arts. Technologies: Angular (Typescript, SCSS, HTML). 
+            is a site I built and maintain for a non-profit that supports
+            students in the performing arts. Technologies: Angular (Typescript,
+            SCSS, HTML).
             <a href="https://github.com/dkmullen/ace" target="_blank">Github</a>
           </div>
         </div>
       </div>
       <div class="portfolio-item-wrapper">
         <picture>
-          <source media="(max-width: 499px)" srcset="assets/images/portfolio/lb-mobile.jpg">
-          <source media="(min-width: 500px)" srcset="assets/images/portfolio/lb-combined.jpg">
-          <img src="assets/images/portfolio/lb-combined.jpg" class="portfolio-image" 
-          alt="Screenshots of the website called A Lovely Beverage">
+          <source
+            media="(max-width: 499px)"
+            srcset="assets/images/portfolio/lb-mobile.jpg"
+          />
+          <source
+            media="(min-width: 500px)"
+            srcset="assets/images/portfolio/lb-combined.jpg"
+          />
+          <img
+            src="assets/images/portfolio/lb-combined.jpg"
+            class="portfolio-image"
+            alt="Screenshots of the website called A Lovely Beverage"
+          />
         </picture>
         <div class="overlay">
           <div class="overlay-text">
-            <a href="https://alovelybeverage.herokuapp.com/" target="_blank">A Lovely 
-            Beverage</a> is a project site I built using Python and Flask. It 
-            pulls beverage data from the Cocktail DB API, and is hosted on Heroku (it 
-            takes a few seconds to wake up.)
-            <a href="https://github.com/dkmullen/cocktail-api-project" target="_blank">Github</a>
+            <a
+              href="https://dkmullen.github.io/lovely-beverage-js/index.html"
+              target="_blank"
+              >A Lovely Beverage</a
+            >
+            is a simple HTML/CSS/JS static site that pulls beverage data from
+            the Cocktail DB API.
+            <a
+              href="https://github.com/dkmullen/lovely-beverage-js"
+              target="_blank"
+              >(repo)</a
+            >
+            I originally built the same site using Python / Flask.
+            <a
+              href="https://github.com/dkmullen/cocktail-api-project"
+              target="_blank"
+              >(repo)</a
+            >
           </div>
         </div>
       </div>
     </div>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
