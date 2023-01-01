@@ -1,47 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dennis Mullen</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="stylesheet" href="./assets/styles/main.css">
-</head>
-<body onload="loadNav()">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+  <body onload="loadNav()">
     <div class="navbar-wrapper" id="navbar-wrapper"></div>
     <div class="content-wrapper">
       <div class="headline">
         <h2>Contact Me</h2>
       </div>
-        <form id="contact-form" onsubmit="event.preventDefault(); submitMessage();">
-            <div class="form-element">
-                <label for="name">Name:</label>
-                <div><input type="text" id="name" class="input" name="name" required></div>
-            </div>
-            <div class="form-element">
-                <label for="email">Email:</label><br>
-                <div><input type="email" id="email" class="input" name="email" required></div>
-                <div id='email-error-message' class="hide">Please enter a valid email address.</div>          
-            </div>
-            <div class="form-element">
-                <label for="message">Message:</label>
-                <div><textarea cols="48" rows="10" class="input" id="message" required></textarea></div>                
-            </div>
+      <form
+        id="contact-form"
+        onsubmit="event.preventDefault(); submitMessage();"
+      >
+        <div class="form-element">
+          <label for="name">Name:</label>
+          <div>
+            <input type="text" id="name" class="input" name="name" required />
+          </div>
+        </div>
+        <div class="form-element">
+          <label for="email">Email:</label><br />
+          <div>
+            <input
+              type="email"
+              id="email"
+              class="input"
+              name="email"
+              required
+            />
+          </div>
+          <div id="email-error-message" class="hide">
+            Please enter a valid email address.
+          </div>
+        </div>
+        <div class="form-element">
+          <label for="message">Message:</label>
+          <div>
+            <textarea
+              cols="48"
+              rows="10"
+              class="input textarea"
+              id="message"
+              required
+            ></textarea>
+          </div>
+        </div>
 
-            <button type="submit" class="button primary disabled" id="submit-button" 
-              onmousedown="pressButton()" onmouseup="releaseButton()"
-              disabled
-              >Submit
-            </button>
-          </form>
-          <p>
-            <span class="social-link"><a href="https://github.com/dkmullen" target="_blank">Github</a></span>
-            <span class="social-link"><a href="https://www.linkedin.com/in/dkmullen/" target="_blank">LinkedIn</a></span>
-            <span class="social-link"><a href="https://twitter.com/dkmullen/" target="_blank">Twitter</a></span>
-          </p>
-          <p class="message-received hide" id="message-received">Thanks! I'll get back to you soon.</p>
+        <button
+          type="submit"
+          class="button primary disabled"
+          id="submit-button"
+          onmousedown="pressButton()"
+          onmouseup="releaseButton()"
+          disabled
+        >
+          Submit
+        </button>
+      </form>
+      <p>
+        <span class="social-link"
+          ><a href="https://github.com/dkmullen" target="_blank"
+            >Github</a
+          ></span
+        >
+        <span class="social-link"
+          ><a href="https://www.linkedin.com/in/dkmullen/" target="_blank"
+            >LinkedIn</a
+          ></span
+        >
+        <span class="social-link"
+          ><a href="https://dkmullen@awscommunity.social/" target="_blank"
+            >Mastodon</a
+          ></span
+        >
+      </p>
+      <p class="message-received hide" id="message-received">
+        Thanks! I'll get back to you soon.
+      </p>
+      <p
+        class="error-sending-message error-text hide"
+        id="error-sending-message"
+      >
+        Sorry, there was an error in sending the message. Please try again.
+      </p>
     </div>
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-</body>
+  </body>
 </html>

@@ -1,3 +1,6 @@
+:root {
+  --warn: red;
+}
 @font-face {
   font-family: 'Roboto Mono';
   src: url(../fonts/roboto-mono/static/RobotoMono-Light.ttf);
@@ -157,6 +160,9 @@ input {
   margin-bottom: 1rem;
   padding: 0 10px;
 }
+.textarea {
+  padding: 10px;
+}
 
 .button.primary {
   height: 40px;
@@ -180,9 +186,13 @@ button.disabled {
 }
 
 #email-error-message {
-  color: red;
+  color: var(--warn);
   font-size: small;
   margin-top: -10px;
+}
+.error-text {
+  font-size: small;
+  color: var(--warn);
 }
 .show {
   visibility: visible;

@@ -52,9 +52,15 @@ async function submitMessage() {
   let name = document.getElementById('name').value;
   let email = document.getElementById('email').value;
   let message = document.getElementById('message').value;
+  let errorMsg = document.querySelector('.error-sending-message').classList;
+  errorMsg.remove('show');
+  errorMsg.add('hide');
   const res = await axios({
     method: 'post',
-    url: 'url',
+    url: 'https://sdfh3459a9.execute-api.us-east-2.amazonaws.com/dev',
+    headers: {
+      'x-api-key': 'i0k0ucR4tW1wmajvQb4XX5GleesDI4Jk2y9l97zd',
+    },
     data: {
       name,
       email,
@@ -62,6 +68,8 @@ async function submitMessage() {
     },
   }).catch((err) => {
     console.error(err);
+    errorMsg.remove('hide');
+    errorMsg.add('show');
   });
   if (res) {
     if (res.status === 200) {
