@@ -20,41 +20,67 @@ const navTemplate = `<div class="navbar">
     </div>`;
 
 loadNav = () => {
-  document.getElementById('navbar-wrapper').innerHTML = navTemplate;
+  document.querySelector('#navbar-wrapper').innerHTML = navTemplate;
   let pathArray = window.location.pathname.split('/');
   switch (pathArray[pathArray.length - 1]) {
     case 'portfolio.html':
-      document.getElementById('portfolioLink').classList.add('active');
+      document.querySelector('#portfolioLink').classList.add('active');
       break;
     case 'writing.html':
-      document.getElementById('writingLink').classList.add('active');
+      document.querySelector('#writingLink').classList.add('active');
       break;
     case 'favorite-things.html':
-      document.getElementById('favoritesLink').classList.add('active');
+      document.querySelector('#favoritesLink').classList.add('active');
       break;
     case 'books.html':
-      document.getElementById('favoritesLink').classList.add('active');
+      document.querySelector('#favoritesLink').classList.add('active');
       break;
     case 'contact.html':
-      document.getElementById('contactLink').classList.add('active');
+      document.querySelector('#contactLink').classList.add('active');
       break;
   }
 };
 
 function pressButton() {
-  document.getElementById('submit-button').classList.add('pressed');
+  document.querySelector('#submit-button').classList.add('pressed');
 }
 function releaseButton() {
-  document.getElementById('submit-button').classList.remove('pressed');
+  document.querySelector('#submit-button').classList.remove('pressed');
+}
+
+// Reserve this var so we can set and cancel it below
+let animation;
+
+function doProgressBar() {
+  let progressBar = document.querySelector('#progress-bar');
+  progressBar.style.opacity = 1;
+  let j = 0;
+  animation = setInterval(() => {
+    if (j === progressBar.children.length) {
+      for (let i of progressBar.children) {
+        i.classList.remove('highlighted');
+      }
+      j = 0;
+    } else {
+      progressBar.children[j].classList.add('highlighted');
+      j++;
+    }
+  }, 500);
+}
+
+function stopProgressBar() {
+  clearInterval(animation);
+  document.querySelector('#progress-bar').style.opacity = 0;
 }
 
 async function submitMessage() {
-  let name = document.getElementById('name').value;
-  let email = document.getElementById('email').value;
-  let message = document.getElementById('message').value;
+  let name = document.querySelector('#name').value;
+  let email = document.querySelector('#email').value;
+  let message = document.querySelector('#message').value;
   let errorMsg = document.querySelector('.error-sending-message').classList;
   errorMsg.remove('show');
   errorMsg.add('hide');
+  doProgressBar();
   const res = await axios({
     method: 'post',
     url: 'https://sdfh3459a9.execute-api.us-east-2.amazonaws.com/dev',
@@ -67,14 +93,15 @@ async function submitMessage() {
       message,
     },
   }).catch((err) => {
-    console.error(err);
     errorMsg.remove('hide');
     errorMsg.add('show');
+    stopProgressBar();
   });
   if (res) {
     if (res.status === 200) {
-      let msg = document.getElementById('message-received').classList;
-      document.getElementById('contact-form').reset();
+      stopProgressBar();
+      let msg = document.querySelector('#message-received').classList;
+      document.querySelector('#contact-form').reset();
       msg.remove('hide');
       msg.add('show');
       setTimeout(() => {
@@ -84,15 +111,15 @@ async function submitMessage() {
     }
   }
 }
-document.getElementById('name').addEventListener('input', doValidate);
-document.getElementById('email').addEventListener('input', doValidate);
-document.getElementById('message').addEventListener('input', doValidate);
+document.querySelector('#name').addEventListener('input', doValidate);
+document.querySelector('#email').addEventListener('input', doValidate);
+document.querySelector('#message').addEventListener('input', doValidate);
 
 function doValidate() {
-  let submitButton = document.getElementById('submit-button');
-  let name = document.getElementById('name').value;
-  let email = document.getElementById('email').value;
-  let message = document.getElementById('message').value;
+  let submitButton = document.querySelector('#submit-button');
+  let name = document.querySelector('#name').value;
+  let email = document.querySelector('#email').value;
+  let message = document.querySelector('#message').value;
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
   if (emailPattern.test(email) && name && message) {
@@ -102,7 +129,7 @@ function doValidate() {
     submitButton.disabled = true;
     submitButton.classList.add('disabled');
   }
-  errMsg = document.getElementById('email-error-message').classList;
+  errMsg = document.querySelector('#email-error-message').classList;
   if (email && !emailPattern.test(email)) {
     errMsg.add('show');
     errMsg.remove('hide');

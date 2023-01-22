@@ -1,5 +1,8 @@
 :root {
   --warn: red;
+  --main-bg-color: #1e3859;
+  --link: #447dc7;
+  --link-hover: #a9bfdc;
 }
 @font-face {
   font-family: 'Roboto Mono';
@@ -9,10 +12,6 @@
 * {
   font-family: 'Roboto Mono';
   font-weight: 300;
-}
-
-:root {
-  --main-bg-color: #1e3859;
 }
 
 body {
@@ -36,11 +35,11 @@ li {
 }
 a {
   text-decoration: none;
-  color: #447dc7;
+  color: var(--link);
   font-weight: bold;
 }
 a:hover {
-  color: #5283c3;
+  color: var(--link-hover);
 }
 .link-section {
   margin-bottom: 2rem;
@@ -241,7 +240,17 @@ a[target='_blank']::after {
     font-size: 1rem;
   }
 }
-
+#progress-bar {
+  margin-top: 1rem;
+  margin-bottom: -8px;
+  opacity: 0;
+}
+#progress-bar .indicator {
+  color: #a9bfdc;
+}
+#progress-bar .indicator.highlighted {
+  color: var(--main-bg-color);
+}
 @media (max-width: 649px) {
   .menu-icon-wrapper {
     width: 70%;
