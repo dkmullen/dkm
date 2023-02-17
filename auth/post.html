@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>Post</h2>
 
     <form>
-    <label for="quote">Quote</label><br>
-    <textarea id="quote" name="quote" rows="8" cols="50"></textarea><br>
-    <label for="source">Source</label><br>
-    <input type="text" id="source" name="source"><br><br>
-    <input type="button" value="Submit" onclick="submitQuote()">
-    </form> 
+      <label for="quote">Quote</label><br />
+      <textarea id="quote" name="quote" rows="8" cols="50"></textarea><br />
+      <label for="source">Source</label><br />
+      <input type="text" id="source" name="source" /><br /><br />
+      <input type="button" value="Submit" onclick="submitQuote()" />
+    </form>
     <div id="result"></div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="../js/main.js"></script>
-</body>
+  </body>
 </html>

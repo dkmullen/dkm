@@ -73,7 +73,7 @@ function stopProgressBar() {
   document.querySelector('#progress-bar').style.opacity = 0;
 }
 
-async function submitMessage() {
+function submitMessage() {
   let name = document.querySelector('#name').value;
   let email = document.querySelector('#email').value;
   let message = document.querySelector('#message').value;
@@ -81,24 +81,20 @@ async function submitMessage() {
   errorMsg.remove('show');
   errorMsg.add('hide');
   doProgressBar();
-  const res = await axios({
-    method: 'post',
-    url: 'https://sdfh3459a9.execute-api.us-east-2.amazonaws.com/dev',
+  fetch('https://sdfh3459a9.execute-api.us-east-2.amazonaws.com/dev', {
+    method: 'POST',
     headers: {
       'x-api-key': 'i0k0ucR4tW1wmajvQb4XX5GleesDI4Jk2y9l97zd',
     },
-    data: {
+    body: JSON.stringify({
       name,
       email,
       message,
-    },
-  }).catch((err) => {
-    errorMsg.remove('hide');
-    errorMsg.add('show');
-    stopProgressBar();
-  });
-  if (res) {
-    if (res.status === 200) {
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('Success:', data);
       stopProgressBar();
       let msg = document.querySelector('#message-received').classList;
       document.querySelector('#contact-form').reset();
@@ -108,9 +104,15 @@ async function submitMessage() {
         msg.remove('show');
         msg.add('hide');
       }, 7000);
-    }
-  }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      errorMsg.remove('hide');
+      errorMsg.add('show');
+      stopProgressBar();
+    });
 }
+
 document.querySelector('#name').addEventListener('input', doValidate);
 document.querySelector('#email').addEventListener('input', doValidate);
 document.querySelector('#message').addEventListener('input', doValidate);
