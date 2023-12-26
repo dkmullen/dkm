@@ -19,6 +19,13 @@ body {
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.7;
+  background-color: black;
+}
+body.dark {
+  color: white;
+}
+body.light {
+  background-color: white;
 }
 li {
   list-style: none;
@@ -159,6 +166,10 @@ input {
   margin-bottom: 1rem;
   padding: 0 10px;
 }
+.dark .input {
+  background: rgb(51, 51, 51);
+  color: white;
+}
 .textarea {
   padding: 10px;
 }
@@ -250,6 +261,9 @@ a[target='_blank']::after {
 }
 #progress-bar .indicator.highlighted {
   color: var(--main-bg-color);
+}
+#theme-link:hover {
+  cursor: pointer;
 }
 @media (max-width: 649px) {
   .menu-icon-wrapper {

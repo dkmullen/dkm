@@ -10,9 +10,9 @@ toggleMenu = () => {
 const navTemplate = `<div class="navbar">
         <div class="logo"><a href="./index.html">dkmullen.com</a></div>
         <div class="menu" id="menu">
-          <a href="./portfolio.html"><div class="menu-item" id="portfolioLink">Portfolio</div></a>
           <a href="./favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
           <a href="./contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
+          <a><span id="theme-link">Theme</span></a>
         </div>
         <div class="menu-icon-wrapper">
             <img class = "menu-icon" src="assets/images/menu-white-36dp.svg" width="36" height="36" alt="menu icon" onclick="toggleMenu()"> 
@@ -39,6 +39,23 @@ loadNav = () => {
       document.querySelector('#contactLink').classList.add('active');
       break;
   }
+  if (localStorage.getItem('dkm-theme') === 'dark') {
+    document.body.classList.add('dark');
+  } else {
+    document.body.classList.add('light');
+  }
+  document.querySelector('#theme-link').addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if (document.body.classList.contains('dark')) {
+      localStorage.setItem('dkm-theme', 'dark');
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
+    } else {
+      localStorage.setItem('dkm-theme', 'light');
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+    }
+  });
 };
 
 function pressButton() {
