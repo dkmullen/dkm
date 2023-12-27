@@ -12,7 +12,7 @@ const navTemplate = `<div class="navbar">
         <div class="menu" id="menu">
           <a href="./favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
           <a href="./contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
-          <a><span id="theme-link">Theme</span></a>
+          <a ><div class="menu-item" id="theme-link">Theme</div></a>
         </div>
         <div class="menu-icon-wrapper">
             <img class = "menu-icon" src="assets/images/menu-white-36dp.svg" width="36" height="36" alt="menu icon" onclick="toggleMenu()"> 
@@ -39,21 +39,26 @@ loadNav = () => {
       document.querySelector('#contactLink').classList.add('active');
       break;
   }
-  if (localStorage.getItem('dkm-theme') === 'dark') {
-    document.body.classList.add('dark');
-  } else {
+  let themeSelector = document.querySelector('#theme-link');
+  if (localStorage.getItem('dkm-theme') === 'light') {
     document.body.classList.add('light');
+    themeSelector.innerHTML = 'Dark';
+  } else {
+    document.body.classList.add('dark');
+    themeSelector.innerHTML = 'Light';
   }
-  document.querySelector('#theme-link').addEventListener('click', () => {
+  themeSelector.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     if (document.body.classList.contains('dark')) {
       localStorage.setItem('dkm-theme', 'dark');
       document.body.classList.add('dark');
       document.body.classList.remove('light');
+      themeSelector.innerHTML = 'Light';
     } else {
       localStorage.setItem('dkm-theme', 'light');
       document.body.classList.remove('dark');
       document.body.classList.add('light');
+      themeSelector.innerHTML = 'Dark';
     }
   });
 };
@@ -130,9 +135,11 @@ function submitMessage() {
     });
 }
 
-document.querySelector('#name').addEventListener('input', doValidate);
-document.querySelector('#email').addEventListener('input', doValidate);
-document.querySelector('#message').addEventListener('input', doValidate);
+if (document.querySelector('#name')) {
+  document.querySelector('#name').addEventListener('input', doValidate);
+  document.querySelector('#email').addEventListener('input', doValidate);
+  document.querySelector('#message').addEventListener('input', doValidate);
+}
 
 function doValidate() {
   let submitButton = document.querySelector('#submit-button');

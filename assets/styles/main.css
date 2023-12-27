@@ -225,6 +225,9 @@ a[target='_blank']::after {
   font-size: smaller;
   color: black;
 }
+.dark .aside {
+  color: white;
+}
 .smaller {
   font-size: small;
 }
