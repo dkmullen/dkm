@@ -245,6 +245,9 @@ a[target='_blank']::after {
   .headline {
     font-size: 1rem;
   }
+  .logo {
+    font-size: 1.75rem;
+  }
   #quote-wrapper-temp .quote {
     max-width: 90%;
     margin-left: 10px;
