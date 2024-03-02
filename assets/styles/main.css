@@ -108,6 +108,36 @@ a:hover {
   margin: 2rem auto;
   /* padding: 0 2rem; */
 }
+.article-headline {
+  margin-top: 2rem;
+}
+.article-headline hr {
+  margin-top: 1rem;
+  max-width: 800px;
+  opacity: 0.5;
+}
+.article-wrapper p,
+.article-wrapper a,
+.article-wrapper h1,
+.article-wrapper h2,
+.article-wrapper h3,
+.article-wrapper h4,
+.article-wrapper h5,
+.article-wrapper h6,
+.article-wrapper em,
+.article-wrapper strong {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+}
+.article-wrapper p,
+.article-wrapper a {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
 .front-page-content {
   max-width: 800px;
   margin: auto;
@@ -152,6 +182,13 @@ strong {
 
 .left {
   text-align: left;
+}
+.center {
+  text-align: center;
+  font-weight: 700;
+}
+.tagline {
+  font-size: medium;
 }
 
 input {
