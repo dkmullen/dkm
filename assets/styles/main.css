@@ -125,6 +125,7 @@ a:hover {
 .article-wrapper h5,
 .article-wrapper h6,
 .article-wrapper em,
+.article-wrapper li,
 .article-wrapper strong {
   width: 90%;
   max-width: 800px;
@@ -133,9 +134,16 @@ a:hover {
   font-family: 'Times New Roman', Times, serif;
 }
 .article-wrapper p,
-.article-wrapper a {
+.article-wrapper a,
+.article-wrapper li {
   font-size: 1.3rem;
   font-weight: 400;
+}
+.article-wrapper ul {
+  margin-left: 30px;
+}
+.article-wrapper li {
+  list-style: disc;
 }
 
 .front-page-content {

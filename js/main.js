@@ -6,12 +6,14 @@ toggleMenu = () => {
     classList.add('show');
   }
 };
+// const url = '/home/dkm/projects/dkmullen.com';
+const url = 'https://dkmullen.com';
 
 const navTemplate = `<div class="navbar">
-        <div class="logo"><a href="./index.html">dkmullen.com</a></div>
+        <div class="logo"><a href="${url}/index.html">dkmullen.com</a></div>
         <div class="menu" id="menu">
-          <a href="./favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
-          <a href="./contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
+          <a href="${url}/favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
+          <a href="${url}/contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
           <a ><div class="menu-item" id="theme-link">Theme</div></a>
         </div>
         <div class="menu-icon-wrapper">
