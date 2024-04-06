@@ -1,7 +1,7 @@
 .card-wrapper {
   max-width: 480px;
   margin-bottom: 2rem;
-  background-color: rgba(0, 0, 0, 0.089);
+  background-color: var(--standard-fill);
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0);
 }

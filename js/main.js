@@ -13,6 +13,7 @@ const navTemplate = `<div class="navbar">
         <div class="logo"><a href="/index.html">dkmullen.com</a></div>
         <div class="menu" id="menu">
           <a href="/favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
+          <a href="/writing/index.html"><div class="menu-item" id="writingLink">Writing</div></a>
           <a href="/contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
           <a ><div class="menu-item" id="theme-link">Theme</div></a>
         </div>

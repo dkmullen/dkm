@@ -1,8 +1,15 @@
+@import 'writing.css';
+@import 'books.css';
+@import 'favorites.css';
+@import 'other-favorites.css';
+@import 'portfolio.css';
+
 :root {
   --warn: red;
   --main-bg-color: #1e3859;
   --link: #447dc7;
   --link-hover: #a9bfdc;
+  --standard-fill: rgba(0, 0, 0, 0.089);
 }
 @font-face {
   font-family: 'Roboto Mono';
