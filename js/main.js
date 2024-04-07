@@ -18,9 +18,14 @@ const navTemplate = `<div class="navbar">
           <a ><div class="menu-item" id="theme-link">Theme</div></a>
         </div>
         <div class="menu-icon-wrapper">
-            <img class = "menu-icon" src="assets/images/menu-white-36dp.svg" width="36" height="36" alt="menu icon" onclick="toggleMenu()"> 
+            <img class = "menu-icon" src="/assets/images/icons/menu-white-36dp.svg" width="36" height="36" alt="menu icon" onclick="toggleMenu()"> 
         </div>
     </div>`;
+
+const sunny =
+  '<img src="/assets/images/icons/weather-sunny.svg" width="24" height="24" alt="light theme icon">';
+const night =
+  '<img src="/assets/images/icons/weather-night.svg" width="24" height="24" alt="light theme icon">';
 
 loadNav = () => {
   document.querySelector('#navbar-wrapper').innerHTML = navTemplate;
@@ -45,10 +50,10 @@ loadNav = () => {
   let themeSelector = document.querySelector('#theme-link');
   if (localStorage.getItem('dkm-theme') === 'light') {
     document.body.classList.add('light');
-    themeSelector.innerHTML = 'Dark';
+    themeSelector.innerHTML = night;
   } else {
     document.body.classList.add('dark');
-    themeSelector.innerHTML = 'Light';
+    themeSelector.innerHTML = sunny;
   }
   themeSelector.addEventListener('click', () => {
     document.body.classList.toggle('dark');
@@ -56,12 +61,12 @@ loadNav = () => {
       localStorage.setItem('dkm-theme', 'dark');
       document.body.classList.add('dark');
       document.body.classList.remove('light');
-      themeSelector.innerHTML = 'Light';
+      themeSelector.innerHTML = sunny;
     } else {
       localStorage.setItem('dkm-theme', 'light');
       document.body.classList.remove('dark');
       document.body.classList.add('light');
-      themeSelector.innerHTML = 'Dark';
+      themeSelector.innerHTML = night;
     }
   });
 };
