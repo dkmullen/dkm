@@ -368,6 +368,16 @@ a[target='_blank']::after {
     max-width: 85%;
   }
 }
+#random-quote {
+  max-width: 500px;
+  margin: auto;
+  background: var(--main-bg-color);
+  color: white;
+  padding: 1px 4px;
+  border-radius: 8px;
+  font-size: smaller;
+}
+
 /* Responsive layout - makes a two column-layout instead of three columns */
 @media screen and (max-width: 899px) {
   .column {

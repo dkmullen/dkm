@@ -27,7 +27,7 @@ const sunny =
 const night =
   '<img src="/assets/images/icons/weather-night.svg" width="24" height="24" alt="light theme icon">';
 
-loadNav = () => {
+loadNav = (page = '') => {
   document.querySelector('#navbar-wrapper').innerHTML = navTemplate;
   let pathArray = window.location.pathname.split('/');
   switch (pathArray[pathArray.length - 1]) {
@@ -69,6 +69,9 @@ loadNav = () => {
       themeSelector.innerHTML = night;
     }
   });
+  if (page === 'index') {
+    getRandomQuote();
+  }
 };
 
 function pressButton() {
@@ -170,5 +173,34 @@ function doValidate() {
   } else {
     errMsg.remove('show');
     errMsg.add('hide');
+  }
+}
+
+async function getRandomQuote() {
+  const apiUrl = 'https://bypkw30lu3.execute-api.us-east-2.amazonaws.com/dev';
+  try {
+    const response = await fetch(apiUrl + '/admin?id=0', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    await response.json().then((data) => {
+      console.log(data);
+      let randQuote = `<p>${data.Item.quote}<?p><p><strong>${
+        data.Item.speaker
+      } ${data.Item.source ? data.Item.source : ''}</strong></p>`;
+      document.querySelector('#random-quote').innerHTML = randQuote;
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    const message = {
+      type: 'error',
+      text: 'Unable to retrieve data',
+    };
+    return message;
   }
 }
