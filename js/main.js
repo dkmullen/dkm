@@ -192,7 +192,7 @@ async function getRandomQuote() {
       console.log(data);
       let randQuote = `<p>${data.Item.quote}<?p><p><strong>${
         data.Item.speaker
-      } ${data.Item.source ? data.Item.source : ''}</strong></p>`;
+      } ${data.Item.source ? `- ${data.Item.source}` : ''}</strong></p>`;
       document.querySelector('#random-quote').innerHTML = randQuote;
     });
   } catch (error) {
