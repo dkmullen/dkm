@@ -4,3 +4,8 @@
   background-color: var(--standard-fill);
   padding: 1rem;
 }
+
+.blockquote {
+  margin: 8px 1rem;
+  border-left: 1px solid;
+}
