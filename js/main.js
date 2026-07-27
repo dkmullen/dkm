@@ -107,10 +107,10 @@ function stopProgressBar() {
 }
 
 function submitMessage() {
-  let name = document.querySelector('#name').value;
-  let email = document.querySelector('#email').value;
-  let message = document.querySelector('#message').value;
   let errorMsg = document.querySelector('.error-sending-message').classList;
+  const form = document.querySelector('#contact-form');
+  const data = new FormData(form);
+  const payload = Object.fromEntries(data.entries());
   errorMsg.remove('show');
   errorMsg.add('hide');
   doProgressBar();
@@ -119,11 +119,7 @@ function submitMessage() {
     headers: {
       'x-api-key': 'i0k0ucR4tW1wmajvQb4XX5GleesDI4Jk2y9l97zd',
     },
-    body: JSON.stringify({
-      name,
-      email,
-      message,
-    }),
+    body: JSON.stringify({ ...payload}),
   })
     .then((response) => response.json())
     .then((data) => {
