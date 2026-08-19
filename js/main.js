@@ -123,7 +123,7 @@ function submitMessage() {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log('Success:', data);
+      console.info('Success:', data);
       stopProgressBar();
       let msg = document.querySelector('#message-received').classList;
       document.querySelector('#contact-form').reset();
@@ -173,10 +173,10 @@ function doValidate() {
 }
 
 async function getRandomQuote() {
-  const apiUrl = 'https://bypkw30lu3.execute-api.us-east-2.amazonaws.com/dev';
+  const apiUrl = "https://dkk4qjkh00.execute-api.us-east-2.amazonaws.com/dev/quotes";
   try {
-    const response = await fetch(apiUrl + '/admin?id=0', {
-      method: 'GET',
+    const response = await fetch(apiUrl, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -185,7 +185,6 @@ async function getRandomQuote() {
       throw new Error('Network response was not ok');
     }
     await response.json().then((data) => {
-      console.log(data);
       let randQuote = `<p>${data.Item.quote}<?p><p><strong>${
         data.Item.speaker
       } ${data.Item.source ? `- ${data.Item.source}` : ''}</strong></p>`;
