@@ -1,3 +1,11 @@
+# Was the Bible really produced without errors? #
+
+**Inerrancy as an almost meaningless claim**
+
+**September 13, 2026**
+
+---
+
 Biblical inerrancy is the concept that the Bible is without errors of any kind in the original manuscripts. This is an essential doctrine in American evangelicalism.
 
 As stated by [The Gospel Coalition](https://www.thegospelcoalition.org/essay/authority-inerrancy-scripture/) "The doctrine of the authority and inerrancy of Scripture is that, as a corollary of the inspiration of Scripture, the God-breathed Scriptures are wholly true in all things that they assert in the original autographs and therefore function with the authority of God’s own words."
