@@ -38,37 +38,40 @@ function escapeXml(value) {
 function makeUrlsAbsolute(html, articleUrl) {
   const baseUrl = new URL(articleUrl);
 
-  return html
-    .replace(
-      /(<a\b[^>]*\bhref=["'])([^"']+)(["'])/gi,
-      (match, prefix, url, suffix) => {
-        if (
-          url.startsWith("#") ||
-          url.startsWith("mailto:") ||
-          url.startsWith("tel:") ||
-          /^[a-z][a-z\d+\-.]*:/i.test(url)
-        ) {
-          return match;
-        }
+  return (
+    html
+      .replace(
+        /(<a\b[^>]*\bhref=["'])([^"']+)(["'])/gi,
+        (match, prefix, url, suffix) => {
+          if (
+            url.startsWith("#") ||
+            url.startsWith("mailto:") ||
+            url.startsWith("tel:") ||
+            /^[a-z][a-z\d+\-.]*:/i.test(url)
+          ) {
+            return match;
+          }
 
-        const absoluteUrl = new URL(url, baseUrl).href;
+          return `${prefix}${new URL(url, baseUrl).href}${suffix}`;
+        },
+      )
+      .replace(
+        /(<img\b[^>]*\bsrc=["'])([^"']+)(["'])/gi,
+        (match, prefix, url, suffix) => {
+          if (url.startsWith("data:") || /^[a-z][a-z\d+\-.]*:/i.test(url)) {
+            return match;
+          }
 
-        return `${prefix}${absoluteUrl}${suffix}`;
-      },
-    )
-    .replace(
-      /(<img\b[^>]*\bsrc=["'])([^"']+)(["'])/gi,
-      (match, prefix, url, suffix) => {
-        if (url.startsWith("data:") || /^[a-z][a-z\d+\-.]*:/i.test(url)) {
-          return match;
-        }
-
-        const absoluteUrl = new URL(url, baseUrl).href;
-
-        return `${prefix}${absoluteUrl}${suffix}`;
-      },
-    );
+          return `${prefix}${new URL(url, baseUrl).href}${suffix}`;
+        },
+      )
+      // Remove target="_blank" (or any other target value)
+      .replace(/\s+target\s*=\s*(["'])[^"']*\1/gi, "")
+      // Remove rel attributes from links
+      .replace(/\s+rel\s*=\s*(["'])[^"']*\1/gi, "")
+  );
 }
+
 
 function getArticle(html, filePath) {
   const title = html.match(/<h1[^>]*>(.*?)<\/h1>/is)?.[1]?.trim();
