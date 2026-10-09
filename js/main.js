@@ -14,10 +14,11 @@ const navTemplate = `<div class="navbar">
         <div class="menu" id="menu">
           <a href="/favorite-things.html"><div class="menu-item" id="favoritesLink">Favorite Things</div></a>
           <a href="/contact.html"><div class="menu-item" id="contactLink">Contact Me</div></a>
-          <a ><div class="menu-item" id="theme-link">Theme</div></a>
+          <a href="/writing/rss.xml"><img src="/assets/images/icons/rss_feed_36dp.svg" class="menu-item" width="24" height="24" alt="rss icon"></a>
+          <a><div class="menu-item" id="theme-link">Theme</div></a>
         </div>
         <div class="menu-icon-wrapper">
-            <img class = "menu-icon" src="/assets/images/icons/menu-white-36dp.svg" width="36" height="36" alt="menu icon" onclick="toggleMenu()"> 
+          <img class = "menu-icon" src="/assets/images/icons/menu-white-36dp.svg" width="36" height="36" alt="menu icon" onclick="toggleMenu()"> 
         </div>
     </div>`;
 
