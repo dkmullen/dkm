@@ -34,4 +34,4 @@ I realize that many people who care about me and the state of my soul will belie
 
 Besides, even if this was the start of new thinking for me, it wasn’t nearly the beginning of a conscious unease with the things I thought I knew for certain. In fact it was decades earlier, during some long conversations with Mormon missionaries, that some of the pebbles under my feet probably started to come loose.
 
-More on that [here](./2_two_mormons.html).
+More on that [here](./2_two_mormons.md).

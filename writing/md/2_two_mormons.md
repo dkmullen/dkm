@@ -46,4 +46,4 @@ Some of these Christians made a decent case for the faith, but always it was a *
 
 I came to Lewis and others much more than half-convinced. My intellect, such as it is, wasn’t really getting in the way, but I wanted to give it new tools. But I wasn’t looking to be convinced, only to have my conviction strengthened. I wasn’t asking “Is it true?” but rather “HOW is it true?” I looked at evidence that supported what I already believed, and mostly labeled anything else as ignorance, foolishness, even deception.
 
-There is a name for this practice of mine, this sifting of the evidence and keeping only what suits my preferences. More on that [here](./3_i_wanted_to_believe.html).
+There is a name for this practice of mine, this sifting of the evidence and keeping only what suits my preferences. More on that [here](./3_i_wanted_to_believe.md).
